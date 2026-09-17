@@ -1,0 +1,3170 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Krankenheld – Krankenfahrdienst</title>
+<meta name="description" content="Krankenheld Krankenfahrdienst – sichere und zuverlässige Krankenfahrten in Mainz und Rheinhessen.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+    --cream:#f5f2e9;
+    --cream2:#ebe7da;
+    --white:#ffffff;
+    --green:#123d2b;
+    --green2:#1c573e;
+    --lime:#c9ed63;
+    --text:#17392b;
+    --muted:#68746d;
+    --black:#10251c;
+    --shadow:0 25px 70px rgba(18,61,43,.13);
+    --shadow-dark:0 30px 80px rgba(8,30,21,.22);
+    --radius:32px;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:"DM Sans",sans-serif;
+    background:var(--cream);
+    color:var(--text);
+    overflow-x:hidden;
+}
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+button,
+input,
+textarea{
+    font:inherit;
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+
+.nav{
+    position:fixed;
+    top:18px;
+    left:50%;
+    transform:translateX(-50%);
+    width:min(1180px,calc(100% - 32px));
+    z-index:1000;
+
+    background:rgba(255,255,255,.88);
+    backdrop-filter:blur(20px);
+    -webkit-backdrop-filter:blur(20px);
+
+    border:1px solid rgba(18,61,43,.08);
+    border-radius:22px;
+    box-shadow:0 15px 50px rgba(15,45,32,.10);
+
+    padding:14px 18px;
+
+    transition:.3s ease;
+}
+
+.nav-inner{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.logo-mark{
+    width:44px;
+    height:44px;
+    border-radius:14px;
+    background:var(--green);
+    color:var(--lime);
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:21px;
+    font-weight:800;
+
+    box-shadow:0 10px 25px rgba(18,61,43,.2);
+}
+
+.logo-text strong{
+    display:block;
+    font-family:"Manrope",sans-serif;
+    font-size:20px;
+    font-weight:800;
+    line-height:1;
+}
+
+.logo-text span{
+    display:block;
+    font-size:12px;
+    color:var(--muted);
+    margin-top:4px;
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:26px;
+    font-size:14px;
+    font-weight:600;
+}
+
+.nav-links a{
+    position:relative;
+}
+
+.nav-links a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-6px;
+    width:0;
+    height:2px;
+    background:var(--green);
+    transition:.3s;
+}
+
+.nav-links a:hover::after{
+    width:100%;
+}
+
+.nav-call{
+    padding:12px 18px;
+    border-radius:14px;
+    background:var(--green);
+    color:white;
+    font-weight:700;
+}
+
+.menu-btn{
+    display:none;
+    border:0;
+    background:none;
+    cursor:pointer;
+    font-size:28px;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    min-height:100vh;
+    padding:150px 0 80px;
+    position:relative;
+    overflow:hidden;
+}
+
+.hero::before{
+    content:"";
+    position:absolute;
+    width:600px;
+    height:600px;
+    border-radius:50%;
+    background:rgba(201,237,99,.35);
+    filter:blur(100px);
+    top:-200px;
+    right:-200px;
+}
+
+.hero::after{
+    content:"";
+    position:absolute;
+    width:450px;
+    height:450px;
+    border-radius:50%;
+    background:rgba(28,87,62,.08);
+    filter:blur(100px);
+    bottom:-150px;
+    left:-200px;
+}
+
+.container{
+    width:min(1180px,calc(100% - 40px));
+    margin:auto;
+    position:relative;
+    z-index:2;
+}
+
+.hero-grid{
+    display:grid;
+    grid-template-columns:1.05fr .95fr;
+    align-items:center;
+    gap:70px;
+}
+
+.eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:9px;
+    padding:8px 13px;
+    background:rgba(255,255,255,.7);
+    border:1px solid rgba(18,61,43,.08);
+    border-radius:100px;
+    font-size:13px;
+    font-weight:700;
+    color:var(--green);
+    margin-bottom:25px;
+}
+
+.eyebrow-dot{
+    width:8px;
+    height:8px;
+    background:#73b64c;
+    border-radius:50%;
+}
+
+.hero h1{
+    font-family:"Manrope",sans-serif;
+    font-size:clamp(46px,6vw,82px);
+    line-height:.98;
+    letter-spacing:-4px;
+    font-weight:800;
+    color:var(--green);
+}
+
+.hero h1 span{
+    color:#78a914;
+}
+
+.hero-text{
+    font-size:20px;
+    line-height:1.65;
+    color:#536159;
+    max-width:610px;
+    margin:30px 0;
+}
+
+.hero-actions{
+    display:flex;
+    gap:13px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    min-height:54px;
+    padding:0 23px;
+    border-radius:16px;
+    border:1px solid var(--green);
+    font-weight:700;
+    transition:.3s ease;
+    cursor:pointer;
+}
+
+.btn-primary{
+    background:var(--green);
+    color:white;
+    box-shadow:0 15px 30px rgba(18,61,43,.18);
+}
+
+.btn-primary:hover{
+    transform:translateY(-3px);
+    background:var(--green2);
+}
+
+.btn-light{
+    background:white;
+}
+
+.btn-light:hover{
+    transform:translateY(-3px);
+    box-shadow:var(--shadow);
+}
+
+.hero-card{
+    position:relative;
+}
+
+.hero-image{
+    height:570px;
+    width:100%;
+    object-fit:cover;
+    border-radius:40px;
+    box-shadow:var(--shadow-dark);
+}
+
+.hero-floating{
+    position:absolute;
+    left:-25px;
+    bottom:28px;
+    background:white;
+    border-radius:22px;
+    padding:17px 20px;
+    box-shadow:var(--shadow);
+    display:flex;
+    align-items:center;
+    gap:13px;
+}
+
+.check-circle{
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    background:var(--lime);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:900;
+}
+
+.hero-floating strong{
+    display:block;
+    font-size:15px;
+}
+
+.hero-floating span{
+    display:block;
+    font-size:12px;
+    color:var(--muted);
+    margin-top:3px;
+}
+
+/* =========================
+   TRUST BAR
+========================= */
+
+.trust{
+    padding:0 0 80px;
+}
+
+.trust-grid{
+    background:var(--green);
+    color:white;
+    border-radius:30px;
+    padding:25px 30px;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+    box-shadow:var(--shadow-dark);
+}
+
+.trust-item{
+    display:flex;
+    align-items:center;
+    gap:13px;
+}
+
+.trust-icon{
+    width:42px;
+    height:42px;
+    flex:none;
+    border-radius:13px;
+    background:rgba(201,237,99,.13);
+    color:var(--lime);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:18px;
+}
+
+.trust-item strong{
+    font-size:14px;
+}
+
+.trust-item span{
+    display:block;
+    color:rgba(255,255,255,.65);
+    font-size:12px;
+    margin-top:3px;
+}
+
+/* =========================
+   GENERAL
+========================= */
+
+section{
+    padding:120px 0;
+}
+
+.section-label{
+    font-size:14px;
+    font-weight:800;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    color:#769c26;
+    margin-bottom:17px;
+}
+
+.section-title{
+    font-family:"Manrope",sans-serif;
+    font-size:clamp(38px,5vw,62px);
+    line-height:1.05;
+    letter-spacing:-2.5px;
+    color:var(--green);
+}
+
+.section-intro{
+    max-width:700px;
+    font-size:18px;
+    line-height:1.7;
+    color:var(--muted);
+    margin-top:20px;
+}
+
+/* =========================
+   STORY
+========================= */
+
+.story{
+    background:white;
+}
+
+.story-grid{
+    display:grid;
+    grid-template-columns:.9fr 1.1fr;
+    gap:80px;
+    align-items:center;
+}
+
+.story-image{
+    width:100%;
+    height:560px;
+    object-fit:cover;
+    border-radius:35px;
+    box-shadow:var(--shadow);
+}
+
+.story-content p{
+    font-size:18px;
+    line-height:1.8;
+    color:#526058;
+    margin-top:24px;
+}
+
+.story-quote{
+    margin-top:30px;
+    padding:24px;
+    border-left:4px solid var(--lime);
+    background:var(--cream);
+    border-radius:0 18px 18px 0;
+    font-family:"Manrope",sans-serif;
+    font-size:20px;
+    font-weight:700;
+    color:var(--green);
+}
+
+/* =========================
+   SERVICES
+========================= */
+
+.services{
+    background:var(--cream);
+}
+
+.service-grid{
+    margin-top:55px;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.service-card{
+    background:white;
+    border-radius:27px;
+    padding:30px;
+    min-height:280px;
+    box-shadow:0 15px 50px rgba(18,61,43,.07);
+    transition:.4s ease;
+    border:1px solid rgba(18,61,43,.05);
+}
+
+.service-card:hover{
+    transform:translateY(-8px);
+    box-shadow:var(--shadow);
+}
+
+.service-number{
+    width:48px;
+    height:48px;
+    border-radius:15px;
+    background:var(--green);
+    color:var(--lime);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:800;
+    margin-bottom:35px;
+}
+
+.service-card h3{
+    font-family:"Manrope",sans-serif;
+    font-size:22px;
+    color:var(--green);
+    margin-bottom:12px;
+}
+
+.service-card p{
+    color:var(--muted);
+    line-height:1.65;
+}
+
+/* =========================
+   FEATURE
+========================= */
+
+.feature{
+    background:var(--green);
+    color:white;
+    overflow:hidden;
+}
+
+.feature .section-title{
+    color:white;
+}
+
+.feature .section-label{
+    color:var(--lime);
+}
+
+.feature .section-intro{
+    color:rgba(255,255,255,.7);
+}
+
+.feature-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:70px;
+    align-items:center;
+}
+
+.feature-image{
+    height:550px;
+    width:100%;
+    object-fit:cover;
+    border-radius:35px;
+    box-shadow:0 35px 80px rgba(0,0,0,.3);
+}
+
+.feature-list{
+    margin-top:35px;
+    display:grid;
+    gap:17px;
+}
+
+.feature-list div{
+    display:flex;
+    gap:13px;
+    align-items:flex-start;
+}
+
+.feature-list i{
+    width:25px;
+    height:25px;
+    border-radius:50%;
+    background:var(--lime);
+    color:var(--green);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex:none;
+    font-size:13px;
+    font-style:normal;
+    font-weight:900;
+}
+
+.feature-list span{
+    line-height:1.55;
+    color:rgba(255,255,255,.82);
+}
+
+/* =========================
+   STEPS
+========================= */
+
+.steps{
+    background:white;
+}
+
+.steps-grid{
+    margin-top:55px;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.step{
+    padding:35px;
+    border-radius:27px;
+    background:var(--cream);
+    position:relative;
+    overflow:hidden;
+}
+
+.step-number{
+    font-family:"Manrope",sans-serif;
+    font-size:65px;
+    font-weight:800;
+    color:rgba(18,61,43,.1);
+    line-height:1;
+    margin-bottom:30px;
+}
+
+.step h3{
+    font-size:21px;
+    color:var(--green);
+    margin-bottom:12px;
+}
+
+.step p{
+    line-height:1.65;
+    color:var(--muted);
+}
+
+/* =========================
+   ABOUT
+========================= */
+
+.about{
+    background:var(--cream);
+}
+
+.about-box{
+    background:white;
+    border-radius:38px;
+    padding:70px;
+    box-shadow:var(--shadow);
+}
+
+.about-text{
+    max-width:900px;
+}
+
+.about-text p{
+    margin-top:25px;
+    font-size:18px;
+    line-height:1.8;
+    color:var(--muted);
+}
+
+.about-signature{
+    margin-top:35px;
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.signature-line{
+    width:45px;
+    height:2px;
+    background:var(--lime);
+}
+
+.about-signature strong{
+    color:var(--green);
+}
+
+/* =========================
+   FAQ
+========================= */
+
+.faq{
+    background:white;
+}
+
+.faq-list{
+    max-width:900px;
+    margin:50px auto 0;
+}
+
+.faq-item{
+    border-bottom:1px solid #d9ddd7;
+}
+
+.faq-question{
+    width:100%;
+    border:0;
+    background:none;
+    text-align:left;
+    padding:25px 5px;
+    display:flex;
+    justify-content:space-between;
+    gap:20px;
+    cursor:pointer;
+    color:var(--green);
+    font-weight:800;
+    font-size:18px;
+}
+
+.faq-plus{
+    font-size:25px;
+    transition:.3s;
+}
+
+.faq-answer{
+    max-height:0;
+    overflow:hidden;
+    transition:max-height .4s ease;
+}
+
+.faq-answer p{
+    padding:0 5px 25px;
+    line-height:1.75;
+    color:var(--muted);
+}
+
+.faq-item.active .faq-answer{
+    max-height:500px;
+}
+
+.faq-item.active .faq-plus{
+    transform:rotate(45deg);
+}
+
+/* =========================
+   CTA
+========================= */
+
+.cta{
+    background:var(--cream);
+}
+
+.cta-box{
+    background:var(--green);
+    color:white;
+    border-radius:38px;
+    padding:65px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:40px;
+    box-shadow:var(--shadow-dark);
+    position:relative;
+    overflow:hidden;
+}
+
+.cta-box::after{
+    content:"";
+    position:absolute;
+    width:350px;
+    height:350px;
+    border-radius:50%;
+    background:rgba(201,237,99,.15);
+    right:-150px;
+    top:-180px;
+}
+
+.cta h2{
+    font-family:"Manrope",sans-serif;
+    font-size:clamp(35px,5vw,55px);
+    line-height:1.05;
+    max-width:650px;
+}
+
+.cta p{
+    margin-top:15px;
+    color:rgba(255,255,255,.7);
+}
+
+.cta-actions{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    min-width:220px;
+    position:relative;
+    z-index:2;
+}
+
+.cta-actions .btn{
+    border-color:white;
+}
+
+.cta-actions .btn-primary{
+    background:var(--lime);
+    color:var(--green);
+    border-color:var(--lime);
+}
+
+.cta-actions .btn-light{
+    background:transparent;
+    color:white;
+}
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact{
+    background:white;
+}
+
+.contact-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:25px;
+    margin-top:55px;
+}
+
+.contact-card{
+    background:var(--cream);
+    border-radius:28px;
+    padding:35px;
+}
+
+.contact-card h3{
+    color:var(--green);
+    font-family:"Manrope",sans-serif;
+    margin-bottom:25px;
+}
+
+.contact-row{
+    display:flex;
+    gap:15px;
+    margin:20px 0;
+}
+
+.contact-icon{
+    width:42px;
+    height:42px;
+    border-radius:13px;
+    background:var(--green);
+    color:var(--lime);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex:none;
+}
+
+.contact-row small{
+    color:var(--muted);
+    display:block;
+    margin-bottom:3px;
+}
+
+.contact-row strong{
+    color:var(--green);
+}
+
+.hours{
+    padding:25px;
+    border-radius:20px;
+    background:white;
+    margin-top:25px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    background:var(--black);
+    color:white;
+    padding:60px 0 25px;
+}
+
+.footer-grid{
+    display:grid;
+    grid-template-columns:1.5fr 1fr 1fr;
+    gap:50px;
+    padding-bottom:50px;
+}
+
+.footer-logo{
+    font-family:"Manrope",sans-serif;
+    font-size:27px;
+    font-weight:800;
+}
+
+.footer-logo span{
+    color:var(--lime);
+}
+
+footer p{
+    color:rgba(255,255,255,.6);
+    line-height:1.7;
+    margin-top:15px;
+    max-width:400px;
+}
+
+.footer-title{
+    font-weight:800;
+    margin-bottom:15px;
+}
+
+.footer-links{
+    display:grid;
+    gap:10px;
+    color:rgba(255,255,255,.65);
+    font-size:14px;
+}
+
+.footer-bottom{
+    border-top:1px solid rgba(255,255,255,.1);
+    padding-top:22px;
+    color:rgba(255,255,255,.45);
+    font-size:13px;
+    display:flex;
+    justify-content:space-between;
+    gap:20px;
+}
+
+/* =========================
+   SCROLL ANIMATION
+========================= */
+
+.reveal{
+    opacity:0;
+    transform:translateY(45px);
+    transition:
+        opacity .8s ease,
+        transform .8s cubic-bezier(.2,.7,.2,1);
+}
+
+.reveal-left{
+    opacity:0;
+    transform:translateX(-50px);
+    transition:
+        opacity .8s ease,
+        transform .8s cubic-bezier(.2,.7,.2,1);
+}
+
+.reveal-right{
+    opacity:0;
+    transform:translateX(50px);
+    transition:
+        opacity .8s ease,
+        transform .8s cubic-bezier(.2,.7,.2,1);
+}
+
+.visible{
+    opacity:1;
+    transform:translate(0);
+}
+
+/* =========================
+   ADMIN
+========================= */
+
+.admin-button{
+    position:fixed;
+    bottom:18px;
+    right:18px;
+    width:48px;
+    height:48px;
+    border-radius:50%;
+    border:1px solid rgba(18,61,43,.1);
+    background:white;
+    color:var(--green);
+    box-shadow:0 12px 35px rgba(0,0,0,.15);
+    z-index:900;
+    cursor:pointer;
+    font-size:19px;
+}
+
+.admin-overlay{
+    display:none;
+    position:fixed;
+    inset:0;
+    z-index:5000;
+    background:rgba(7,25,17,.7);
+    backdrop-filter:blur(10px);
+    padding:20px;
+    overflow:auto;
+}
+
+.admin-overlay.active{
+    display:block;
+}
+
+.admin-panel{
+    width:min(1000px,100%);
+    margin:30px auto;
+    background:white;
+    border-radius:30px;
+    overflow:hidden;
+    box-shadow:0 40px 100px rgba(0,0,0,.3);
+}
+
+.admin-header{
+    background:var(--green);
+    color:white;
+    padding:25px 30px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.admin-header h2{
+    font-family:"Manrope",sans-serif;
+}
+
+.admin-close{
+    border:0;
+    background:rgba(255,255,255,.1);
+    color:white;
+    width:42px;
+    height:42px;
+    border-radius:12px;
+    cursor:pointer;
+    font-size:22px;
+}
+
+.admin-body{
+    padding:30px;
+}
+
+.login-box{
+    max-width:420px;
+    margin:30px auto;
+    text-align:center;
+}
+
+.login-box h3{
+    font-size:28px;
+    color:var(--green);
+    margin-bottom:10px;
+}
+
+.login-box p{
+    color:var(--muted);
+    margin-bottom:25px;
+}
+
+.admin-input{
+    width:100%;
+    border:1px solid #d8ddd8;
+    background:#fafbf9;
+    padding:14px 16px;
+    border-radius:13px;
+    outline:none;
+    margin-bottom:12px;
+}
+
+.admin-input:focus{
+    border-color:var(--green);
+}
+
+.admin-login{
+    width:100%;
+}
+
+.admin-content{
+    display:none;
+}
+
+.admin-content.active{
+    display:block;
+}
+
+.admin-section{
+    margin-bottom:40px;
+    padding-bottom:30px;
+    border-bottom:1px solid #e2e5e1;
+}
+
+.admin-section h3{
+    color:var(--green);
+    font-family:"Manrope",sans-serif;
+    margin-bottom:20px;
+}
+
+.admin-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+}
+
+.admin-field{
+    margin-bottom:15px;
+}
+
+.admin-field.full{
+    grid-column:1/-1;
+}
+
+.admin-field label{
+    display:block;
+    font-size:13px;
+    font-weight:700;
+    color:var(--green);
+    margin-bottom:7px;
+}
+
+.admin-field textarea{
+    min-height:130px;
+    resize:vertical;
+}
+
+.admin-save{
+    background:var(--green);
+    color:white;
+    border:0;
+    border-radius:14px;
+    padding:15px 25px;
+    cursor:pointer;
+    font-weight:800;
+}
+
+.admin-reset{
+    margin-left:10px;
+    border:1px solid #ddd;
+    background:white;
+    padding:14px 20px;
+    border-radius:14px;
+    cursor:pointer;
+}
+
+.image-preview{
+    width:100%;
+    max-height:220px;
+    object-fit:cover;
+    border-radius:16px;
+    margin-top:10px;
+}
+
+.admin-message{
+    margin-top:15px;
+    padding:13px;
+    background:#edf8dc;
+    color:var(--green);
+    border-radius:12px;
+    display:none;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:850px){
+
+    .nav{
+        top:10px;
+        width:calc(100% - 20px);
+    }
+
+    .nav-links{
+        display:none;
+        position:absolute;
+        top:75px;
+        left:0;
+        right:0;
+        padding:20px;
+        background:white;
+        border-radius:20px;
+        box-shadow:var(--shadow);
+        flex-direction:column;
+        align-items:stretch;
+    }
+
+    .nav-links.open{
+        display:flex;
+    }
+
+    .nav-call{
+        text-align:center;
+    }
+
+    .menu-btn{
+        display:block;
+    }
+
+    .hero{
+        padding-top:130px;
+    }
+
+    .hero-grid,
+    .story-grid,
+    .feature-grid,
+    .contact-grid{
+        grid-template-columns:1fr;
+    }
+
+    .hero{
+        padding-bottom:50px;
+    }
+
+    .hero-image{
+        height:440px;
+    }
+
+    .hero-floating{
+        left:15px;
+        bottom:15px;
+    }
+
+    .trust-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    section{
+        padding:85px 0;
+    }
+
+    .service-grid,
+    .steps-grid{
+        grid-template-columns:1fr;
+    }
+
+    .story-image,
+    .feature-image{
+        height:400px;
+    }
+
+    .about-box{
+        padding:35px 25px;
+    }
+
+    .cta-box{
+        padding:40px 25px;
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .cta-actions{
+        width:100%;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr;
+        gap:30px;
+    }
+
+    .footer-bottom{
+        flex-direction:column;
+    }
+
+    .admin-grid{
+        grid-template-columns:1fr;
+    }
+
+    .admin-field.full{
+        grid-column:auto;
+    }
+}
+
+@media(max-width:500px){
+
+    .container{
+        width:min(100% - 28px,1180px);
+    }
+
+    .logo-mark{
+        width:39px;
+        height:39px;
+        font-size:17px;
+    }
+
+    .logo-text strong{
+        font-size:17px;
+    }
+
+    .logo-text span{
+        font-size:10px;
+    }
+
+    .hero h1{
+        font-size:48px;
+        letter-spacing:-2.5px;
+    }
+
+    .hero-text{
+        font-size:17px;
+    }
+
+    .hero-actions{
+        flex-direction:column;
+    }
+
+    .btn{
+        width:100%;
+    }
+
+    .hero-image{
+        height:370px;
+    }
+
+    .trust-grid{
+        grid-template-columns:1fr;
+    }
+
+    .section-title{
+        font-size:40px;
+    }
+
+    .story-image,
+    .feature-image{
+        height:330px;
+    }
+
+    .admin-body{
+        padding:20px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- =========================
+     NAVIGATION
+========================= -->
+
+<nav class="nav">
+<div class="nav-inner">
+
+<a href="#start" class="logo">
+    <div class="logo-mark">+</div>
+    <div class="logo-text">
+        <strong id="navName">Krankenheld</strong>
+        <span id="navSubtitle">Krankenfahrdienst</span>
+    </div>
+</a>
+
+<div class="nav-links" id="navLinks">
+    <a href="#leistungen">Leistungen</a>
+    <a href="#ablauf">So geht's</a>
+    <a href="#ueber-uns">Über uns</a>
+    <a href="#faq">FAQ</a>
+    <a href="#kontakt">Kontakt</a>
+    <a class="nav-call" id="navPhone" href="tel:+4961314634120">
+        Jetzt anrufen
+    </a>
+</div>
+
+<button class="menu-btn" id="menuBtn">☰</button>
+
+</div>
+</nav>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<main>
+
+<section class="hero" id="start">
+
+<div class="container">
+
+<div class="hero-grid">
+
+<div class="hero-copy reveal-left">
+
+<div class="eyebrow">
+    <span class="eyebrow-dot"></span>
+    <span id="heroEyebrow">Gesundheit ist unsere Mission.</span>
+</div>
+
+<h1>
+    <span id="heroTitleGreen">Sichere Krankenfahrten</span>
+    <br>
+    <span id="heroTitleDark">in Mainz & Rheinhessen</span>
+</h1>
+
+<p class="hero-text" id="heroDescription">
+Krankenfahrten mit Rollstuhl, Tragestuhl und Liege in Mainz & Rheinhessen.
+</p>
+
+<div class="hero-actions">
+
+<a class="btn btn-primary" id="heroPhone"
+href="tel:+4961314634120">
+☎ Jetzt anrufen
+</a>
+
+<a class="btn btn-light"
+id="heroEmail"
+href="mailto:kontakt@krankenheld-fahrdienst.de">
+✉ E-Mail schreiben
+</a>
+
+</div>
+
+</div>
+
+
+<div class="hero-card reveal-right">
+
+<img
+id="heroImage"
+class="hero-image"
+src="https://images.unsplash.com/photo-1587745416684-47953f16f02f?auto=format&fit=crop&w=1200&q=85"
+alt="Krankenfahrdienst Fahrzeug">
+
+<div class="hero-floating">
+
+<div class="check-circle">✓</div>
+
+<div>
+<strong id="heroFloatingTitle">
+Zuverlässig unterwegs
+</strong>
+
+<span id="heroFloatingText">
+Mainz & Rheinhessen
+</span>
+</div>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</section>
+
+
+<!-- =========================
+     TRUST
+========================= -->
+
+<section class="trust">
+
+<div class="container">
+
+<div class="trust-grid">
+
+<div class="trust-item reveal">
+<div class="trust-icon">✓</div>
+<div>
+<strong id="trust1">Langjährige Erfahrung</strong>
+<span>im Krankenfahrdienst</span>
+</div>
+</div>
+
+<div class="trust-item reveal">
+<div class="trust-icon">⌖</div>
+<div>
+<strong id="trust2">Regional verankert</strong>
+<span>Mainz & Rheinhessen</span>
+</div>
+</div>
+
+<div class="trust-item reveal">
+<div class="trust-icon">♥</div>
+<div>
+<strong id="trust3">Nahbarer Service</strong>
+<span>freundlich & menschlich</span>
+</div>
+</div>
+
+<div class="trust-item reveal">
+<div class="trust-icon">→</div>
+<div>
+<strong id="trust4">Einfache Abwicklung</strong>
+<span>Ihrer Fahrt</span>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     STORY
+========================= -->
+
+<section class="story" id="story">
+
+<div class="container">
+
+<div class="story-grid">
+
+<div class="reveal-left">
+
+<img
+id="storyImage"
+class="story-image"
+src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1000&q=85"
+alt="Pflege und Unterstützung">
+
+</div>
+
+<div class="story-content reveal-right">
+
+<div class="section-label">Unser Anspruch</div>
+
+<h2 class="section-title">
+Weil eine Fahrt mehr ist als nur ein Weg.
+</h2>
+
+<p id="storyText1">
+Wege zum Arzt oder Krankenhaus sind oft kompliziert und anstrengend.
+Wir übernehmen das Fahren, Tragen und Begleiten – verlässlich und freundlich.
+</p>
+
+<p id="storyText2">
+Unser Anspruch ist einfach: Sie sollen sich während der gesamten Fahrt sicher,
+verstanden und gut aufgehoben fühlen.
+</p>
+
+<div class="story-quote" id="storyQuote">
+So kommen Sie sicher und stressfrei an.
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     SERVICES
+========================= -->
+
+<section class="services" id="leistungen">
+
+<div class="container">
+
+<div class="reveal">
+
+<div class="section-label">Unsere Leistungen</div>
+
+<h2 class="section-title">
+Wir unterstützen Sie gerne bei Ihrer Krankenfahrt
+</h2>
+
+<p class="section-intro" id="servicesIntro">
+Egal ob im Rollstuhl, Tragestuhl oder liegend – wir bringen Sie sicher,
+ruhig und zuverlässig an Ihr Ziel. Wir unterstützen beim Ein- und Aussteigen,
+sichern den Transport fachgerecht und kümmern uns um die Abrechnung mit Ihrer Krankenkasse.
+</p>
+
+</div>
+
+
+<div class="service-grid">
+
+<div class="service-card reveal">
+<div class="service-number">01</div>
+<h3>Dialysefahrten</h3>
+<p>
+Regelmäßige Fahrten zur Dialyse – pünktlich, planbar und mit Unterstützung
+beim Ein- und Aussteigen.
+</p>
+</div>
+
+<div class="service-card reveal">
+<div class="service-number">02</div>
+<h3>Strahlen- & Chemotherapie</h3>
+<p>
+Schonende Beförderung zu onkologischen Behandlungen mit Ruhe,
+Rücksicht und Diskretion.
+</p>
+</div>
+
+<div class="service-card reveal">
+<div class="service-number">03</div>
+<h3>Arzt & Krankenhaus</h3>
+<p>
+Fahrten zu notwendigen Arztterminen, Krankenhäusern und nach
+einem Krankenhausaufenthalt sicher nach Hause.
+</p>
+</div>
+
+<div class="service-card reveal">
+<div class="service-number">04</div>
+<h3>Reha & Therapie</h3>
+<p>
+Zuverlässige Fahrten zu Physiotherapie, Ergotherapie und Reha-Kliniken.
+</p>
+</div>
+
+<div class="service-card reveal">
+<div class="service-number">05</div>
+<h3>Verlegungsfahrten</h3>
+<p>
+Planbare Transporte zwischen Einrichtungen, wenn kein Rettungswagen
+erforderlich ist.
+</p>
+</div>
+
+<div class="service-card reveal">
+<div class="service-number">06</div>
+<h3>Rollstuhl, Tragestuhl & Liege</h3>
+<p>
+Wir passen den Transport an die individuelle Situation unserer Fahrgäste an.
+</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     FEATURE
+========================= -->
+
+<section class="feature">
+
+<div class="container">
+
+<div class="feature-grid">
+
+<div class="reveal-left">
+
+<img
+id="featureImage"
+class="feature-image"
+src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=1000&q=85"
+alt="Krankenfahrt">
+
+</div>
+
+<div class="reveal-right">
+
+<div class="section-label">Unser Versprechen</div>
+
+<h2 class="section-title">
+Sicher. Ruhig. Menschlich.
+</h2>
+
+<p class="section-intro">
+Wir möchten, dass Sie sich vom ersten Kontakt bis zur Ankunft
+gut aufgehoben fühlen.
+</p>
+
+<div class="feature-list">
+
+<div>
+<i>✓</i>
+<span>Pünktliche Abholung und zuverlässige Planung.</span>
+</div>
+
+<div>
+<i>✓</i>
+<span>Unterstützung beim Ein- und Aussteigen.</span>
+</div>
+
+<div>
+<i>✓</i>
+<span>Respektvoller und freundlicher Umgang.</span>
+</div>
+
+<div>
+<i>✓</i>
+<span>Fachgerechte Sicherung während des Transports.</span>
+</div>
+
+<div>
+<i>✓</i>
+<span>Direkte Abwicklung mit der Krankenkasse, sofern die Voraussetzungen erfüllt sind.</span>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     STEPS
+========================= -->
+
+<section class="steps" id="ablauf">
+
+<div class="container">
+
+<div class="reveal">
+
+<div class="section-label">So geht's</div>
+
+<h2 class="section-title">
+So einfach geht's – in 3 Schritten
+</h2>
+
+</div>
+
+<div class="steps-grid">
+
+<div class="step reveal">
+
+<div class="step-number">01</div>
+
+<h3>Anruf oder E-Mail</h3>
+
+<p>
+Sie melden Ihre Fahrt telefonisch oder per E-Mail mit Termin,
+Adresse und ärztlicher Verordnung an.
+</p>
+
+</div>
+
+<div class="step reveal">
+
+<div class="step-number">02</div>
+
+<h3>Terminbestätigung</h3>
+
+<p>
+Wir planen Ihre Fahrt, stimmen Besonderheiten ab und bestätigen
+Uhrzeit und Abholung.
+</p>
+
+</div>
+
+<div class="step reveal">
+
+<div class="step-number">03</div>
+
+<h3>Sichere Fahrt</h3>
+
+<p>
+Wir kommen pünktlich, helfen beim Ein- und Aussteigen und bringen
+Sie zuverlässig ans Ziel.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section class="about" id="ueber-uns">
+
+<div class="container">
+
+<div class="about-box reveal">
+
+<div class="section-label">Über uns</div>
+
+<h2 class="section-title">
+Krankenheld Krankenfahrdienst –
+Unser Antrieb & unsere Mission
+</h2>
+
+<div class="about-text">
+
+<p id="aboutText1">
+Fahren, Helfen und der direkte Kontakt mit Menschen sind meine Leidenschaft.
+Nach vielen Stationen in meinem Leben war klar: Ich möchte etwas Eigenes
+aufbauen – gemeinsam mit meinem Bruder.
+</p>
+
+<p id="aboutText2">
+Mit meiner Ausbildung im Gesundheitswesen und der Erfahrung im Fahrdienst
+kenne ich sowohl die Praxis als auch die Abläufe mit den Kassen.
+Mein Ziel ist, dass jede Fahrt angenehm, sicher und menschlich abläuft.
+Gesundheit ist unsere Mission.
+</p>
+
+<h2 style="margin-top:55px;font-family:Manrope;font-size:36px;color:#123d2b;">
+Menschlichkeit steht bei uns an erster Stelle
+</h2>
+
+<p id="aboutText3">
+Wir behandeln jede Kundin und jeden Kunden mit echter Wertschätzung.
+Sicherheit hat dabei immer Priorität, ob beim Fahren oder beim Tragen.
+Sie können sich auf uns verlassen: Wir kommen pünktlich und halten,
+was wir zusagen.
+</p>
+
+<div class="about-signature">
+
+<div class="signature-line"></div>
+
+<div>
+<strong id="founderName">Semih Yilmaz</strong>
+<br>
+<span>Gründer von Krankenheld Krankenfahrdienst</span>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     FAQ
+========================= -->
+
+<section class="faq" id="faq">
+
+<div class="container">
+
+<div class="reveal">
+
+<div class="section-label">FAQ</div>
+
+<h2 class="section-title">
+Häufig gestellte Fragen
+</h2>
+
+</div>
+
+<div class="faq-list">
+
+<div class="faq-item reveal">
+
+<button class="faq-question">
+Welche Fahrten bietet ihr an?
+<span class="faq-plus">+</span>
+</button>
+
+<div class="faq-answer">
+<p>
+Krankenfahrten mit Rollstuhl, Tragestuhl und Liege, Dialysefahrten,
+Fahrten zur Strahlen- und Chemotherapie, Arzt- und Krankenhausfahrten,
+Reha- und Therapiefahrten sowie Verlegungsfahrten.
+</p>
+</div>
+
+</div>
+
+
+<div class="faq-item reveal">
+
+<button class="faq-question">
+Wie buche ich eine Fahrt?
+<span class="faq-plus">+</span>
+</button>
+
+<div class="faq-answer">
+<p>
+Telefonisch oder per E-Mail mit Termin, Adresse und den notwendigen
+Informationen bzw. der ärztlichen Verordnung.
+</p>
+</div>
+
+</div>
+
+
+<div class="faq-item reveal">
+
+<button class="faq-question">
+Rechnet ihr direkt mit der Krankenkasse ab?
+<span class="faq-plus">+</span>
+</button>
+
+<div class="faq-answer">
+<p>
+Ja, sofern die entsprechenden Voraussetzungen erfüllt sind.
+Eine ärztliche Verordnung ist erforderlich. Falls eine Genehmigung
+notwendig ist, muss diese gegebenenfalls vor der Fahrt eingeholt werden.
+</p>
+</div>
+
+</div>
+
+
+<div class="faq-item reveal">
+
+<button class="faq-question">
+Dürfen Begleitpersonen mitfahren?
+<span class="faq-plus">+</span>
+</button>
+
+<div class="faq-answer">
+<p>
+Bitte sprechen Sie uns bei der Buchung darauf an. Wir klären gemeinsam,
+ob eine Begleitperson bei der jeweiligen Fahrt mitgenommen werden kann.
+</p>
+</div>
+
+</div>
+
+
+<div class="faq-item reveal">
+
+<button class="faq-question">
+Wie weit im Voraus soll ich anfragen?
+<span class="faq-plus">+</span>
+</button>
+
+<div class="faq-answer">
+<p>
+Je früher Sie Ihre Fahrt anmelden, desto besser können wir Ihren
+Wunschtermin einplanen. Bei regelmäßigen Fahrten empfehlen wir eine
+frühzeitige Absprache.
+</p>
+</div>
+
+</div>
+
+
+<div class="faq-item reveal">
+
+<button class="faq-question">
+Wie läuft die Bezahlung bei privaten Fahrten?
+<span class="faq-plus">+</span>
+</button>
+
+<div class="faq-answer">
+<p>
+Private Fahrten werden direkt mit Ihnen abgerechnet.
+Wir informieren Sie vorab transparent über die Kosten.
+</p>
+</div>
+
+</div>
+
+
+<div class="faq-item reveal">
+
+<button class="faq-question">
+In welchen Regionen fahrt ihr?
+<span class="faq-plus">+</span>
+</button>
+
+<div class="faq-answer">
+<p>
+Unser Schwerpunkt liegt in Mainz und Rheinhessen. Je nach Fahrt
+fahren wir unter anderem nach Wiesbaden, Nieder-Olm, Ingelheim,
+Bingen, Alzey, Worms, Bad Kreuznach und Frankfurt.
+</p>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     CTA
+========================= -->
+
+<section class="cta">
+
+<div class="container">
+
+<div class="cta-box reveal">
+
+<div>
+
+<h2>
+Wir freuen uns auf die Fahrt mit Ihnen.
+</h2>
+
+<p>
+Kontaktieren Sie uns und besprechen Sie Ihre Fahrt persönlich mit uns.
+</p>
+
+</div>
+
+<div class="cta-actions">
+
+<a class="btn btn-primary"
+id="ctaPhone"
+href="tel:+4961314634120">
+☎ Jetzt anrufen
+</a>
+
+<a class="btn btn-light"
+id="ctaEmail"
+href="mailto:kontakt@krankenheld-fahrdienst.de">
+✉ E-Mail schreiben
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section class="contact" id="kontakt">
+
+<div class="container">
+
+<div class="reveal">
+
+<div class="section-label">Kontakt</div>
+
+<h2 class="section-title">
+Wir sind für Sie da.
+</h2>
+
+<p class="section-intro">
+Sie haben Fragen zu einer Fahrt? Rufen Sie uns an oder schreiben Sie uns.
+</p>
+
+</div>
+
+
+<div class="contact-grid">
+
+<div class="contact-card reveal">
+
+<h3>Krankenheld</h3>
+
+<div class="contact-row">
+
+<div class="contact-icon">⌖</div>
+
+<div>
+<small>Adresse</small>
+<strong id="contactAddress">
+Yilmaz Krankenfahrdienst GbR<br>
+Semih Yilmaz und Furkan Yilmaz<br>
+Laubenheimer Straße 63<br>
+55130 Mainz
+</strong>
+</div>
+
+</div>
+
+
+<div class="contact-row">
+
+<div class="contact-icon">☎</div>
+
+<div>
+<small>Telefon</small>
+<strong id="contactPhone">
+06131-4634120
+</strong>
+</div>
+
+</div>
+
+
+<div class="contact-row">
+
+<div class="contact-icon">✉</div>
+
+<div>
+<small>E-Mail</small>
+<strong id="contactEmail">
+kontakt@krankenheld-fahrdienst.de
+</strong>
+</div>
+
+</div>
+
+</div>
+
+
+<div class="contact-card reveal">
+
+<h3>Geschäftszeiten</h3>
+
+<div class="hours">
+
+<strong id="businessHours">
+Mo – So, 7:00 bis 19:00 Uhr
+</strong>
+
+<p>
+Früh- & Spätfahrten nach Vereinbarung
+</p>
+
+</div>
+
+<div class="hours">
+
+<strong>Region</strong>
+
+<p id="regionText">
+Mainz, Rheinhessen inkl. Wiesbaden, Nieder-Olm,
+Ingelheim, Bingen, Alzey, Worms, Bad Kreuznach und Frankfurt.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+<div class="container">
+
+<div class="footer-grid">
+
+<div>
+
+<div class="footer-logo">
+<span>Krankenheld</span><br>
+Krankenfahrdienst
+</div>
+
+<p>
+Gesundheit ist unsere Mission.
+Sichere, zuverlässige und menschliche Krankenfahrten
+in Mainz und Rheinhessen.
+</p>
+
+</div>
+
+
+<div>
+
+<div class="footer-title">Navigation</div>
+
+<div class="footer-links">
+
+<a href="#leistungen">Leistungen</a>
+<a href="#ablauf">So geht's</a>
+<a href="#ueber-uns">Über uns</a>
+<a href="#faq">FAQ</a>
+<a href="#kontakt">Kontakt</a>
+
+</div>
+
+</div>
+
+
+<div>
+
+<div class="footer-title">Kontakt</div>
+
+<div class="footer-links">
+
+<a id="footerPhone" href="tel:+4961314634120">
+06131-4634120
+</a>
+
+<a id="footerEmail"
+href="mailto:kontakt@krankenheld-fahrdienst.de">
+kontakt@krankenheld-fahrdienst.de
+</a>
+
+<span>Mainz, Deutschland</span>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="footer-bottom">
+
+<span>
+© 2025–2026 Krankenheld
+</span>
+
+<span>
+Yilmaz Krankenfahrdienst GbR
+</span>
+
+</div>
+
+</div>
+
+</footer>
+
+
+<!-- ADMIN BUTTON -->
+
+<button class="admin-button" id="adminOpen" title="Admin">
+⚙
+</button>
+
+
+<!-- =========================
+     ADMIN PANEL
+========================= -->
+
+<div class="admin-overlay" id="adminOverlay">
+
+<div class="admin-panel">
+
+<div class="admin-header">
+
+<h2>Krankenheld – Admin</h2>
+
+<button class="admin-close" id="adminClose">
+×
+</button>
+
+</div>
+
+
+<div class="admin-body">
+
+
+<!-- LOGIN -->
+
+<div class="login-box" id="loginBox">
+
+<h3>Admin Bereich</h3>
+
+<p>
+Bitte Passwort eingeben.
+</p>
+
+<input
+class="admin-input"
+id="adminPassword"
+type="password"
+placeholder="Admin-Passwort">
+
+<button
+class="btn btn-primary admin-login"
+id="loginButton">
+Anmelden
+</button>
+
+<p id="loginError"
+style="color:#b42318;margin-top:12px;display:none;">
+Falsches Passwort.
+</p>
+
+</div>
+
+
+<!-- ADMIN CONTENT -->
+
+<div class="admin-content" id="adminContent">
+
+
+<div class="admin-section">
+
+<h3>Allgemeine Informationen</h3>
+
+<div class="admin-grid">
+
+<div class="admin-field">
+
+<label>Firmenname</label>
+
+<input
+class="admin-input"
+id="editCompany"
+value="Krankenheld">
+
+</div>
+
+<div class="admin-field">
+
+<label>Untertitel</label>
+
+<input
+class="admin-input"
+id="editSubtitle"
+value="Krankenfahrdienst">
+
+</div>
+
+<div class="admin-field full">
+
+<label>Hero Überschrift</label>
+
+<input
+class="admin-input"
+id="editHeroTitle"
+value="Sichere Krankenfahrten in Mainz & Rheinhessen">
+
+</div>
+
+<div class="admin-field full">
+
+<label>Hero Beschreibung</label>
+
+<textarea
+class="admin-input"
+id="editHeroDescription">Krankenfahrten mit Rollstuhl, Tragestuhl und Liege in Mainz & Rheinhessen.</textarea>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="admin-section">
+
+<h3>Bilder</h3>
+
+<p style="color:#68746d;margin-bottom:20px;">
+Du kannst hier direkte Bild-URLs eintragen. Für GitHub empfehlen wir,
+die Bilder in einen Ordner <b>images</b> hochzuladen.
+</p>
+
+<div class="admin-grid">
+
+<div class="admin-field">
+
+<label>Hero Bild</label>
+
+<input
+class="admin-input"
+id="editHeroImage"
+placeholder="Bild-URL">
+
+<img
+class="image-preview"
+id="previewHero">
+
+</div>
+
+<div class="admin-field">
+
+<label>Story Bild</label>
+
+<input
+class="admin-input"
+id="editStoryImage"
+placeholder="Bild-URL">
+
+<img
+class="image-preview"
+id="previewStory">
+
+</div>
+
+<div class="admin-field">
+
+<label>Service Bild</label>
+
+<input
+class="admin-input"
+id="editFeatureImage"
+placeholder="Bild-URL">
+
+<img
+class="image-preview"
+id="previewFeature">
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="admin-section">
+
+<h3>Hero</h3>
+
+<div class="admin-grid">
+
+<div class="admin-field">
+
+<label>Kleine Überschrift</label>
+
+<input
+class="admin-input"
+id="editEyebrow"
+value="Gesundheit ist unsere Mission.">
+
+</div>
+
+<div class="admin-field">
+
+<label>Hero Box Titel</label>
+
+<input
+class="admin-input"
+id="editFloatingTitle"
+value="Zuverlässig unterwegs">
+
+</div>
+
+<div class="admin-field">
+
+<label>Hero Box Text</label>
+
+<input
+class="admin-input"
+id="editFloatingText"
+value="Mainz & Rheinhessen">
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="admin-section">
+
+<h3>Über uns</h3>
+
+<div class="admin-field">
+
+<label>Text 1</label>
+
+<textarea
+class="admin-input"
+id="editAbout1"></textarea>
+
+</div>
+
+<div class="admin-field">
+
+<label>Text 2</label>
+
+<textarea
+class="admin-input"
+id="editAbout2"></textarea>
+
+</div>
+
+<div class="admin-field">
+
+<label>Text 3</label>
+
+<textarea
+class="admin-input"
+id="editAbout3"></textarea>
+
+</div>
+
+<div class="admin-field">
+
+<label>Gründer</label>
+
+<input
+class="admin-input"
+id="editFounder">
+
+</div>
+
+</div>
+
+
+<div class="admin-section">
+
+<h3>Kontakt</h3>
+
+<div class="admin-grid">
+
+<div class="admin-field">
+
+<label>Telefon</label>
+
+<input
+class="admin-input"
+id="editPhone">
+
+</div>
+
+<div class="admin-field">
+
+<label>E-Mail</label>
+
+<input
+class="admin-input"
+id="editEmail">
+
+</div>
+
+<div class="admin-field full">
+
+<label>Adresse</label>
+
+<textarea
+class="admin-input"
+id="editAddress"></textarea>
+
+</div>
+
+<div class="admin-field">
+
+<label>Geschäftszeiten</label>
+
+<input
+class="admin-input"
+id="editHours">
+
+</div>
+
+<div class="admin-field">
+
+<label>Region</label>
+
+<textarea
+class="admin-input"
+id="editRegion"></textarea>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div>
+
+<button
+class="admin-save"
+id="saveButton">
+✓ Änderungen speichern
+</button>
+
+<button
+class="admin-reset"
+id="resetButton">
+Zurücksetzen
+</button>
+
+<div
+class="admin-message"
+id="adminMessage">
+Änderungen wurden gespeichert.
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<script>
+
+/* ============================================================
+   DEFAULT DATA
+============================================================ */
+
+const defaultData = {
+
+company:"Krankenheld",
+
+subtitle:"Krankenfahrdienst",
+
+eyebrow:"Gesundheit ist unsere Mission.",
+
+heroTitleGreen:"Sichere Krankenfahrten",
+
+heroTitleDark:"in Mainz & Rheinhessen",
+
+heroDescription:
+"Krankenfahrten mit Rollstuhl, Tragestuhl und Liege in Mainz & Rheinhessen.",
+
+floatingTitle:"Zuverlässig unterwegs",
+
+floatingText:"Mainz & Rheinhessen",
+
+heroImage:
+"https://images.unsplash.com/photo-1587745416684-47953f16f02f?auto=format&fit=crop&w=1200&q=85",
+
+storyImage:
+"https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1000&q=85",
+
+featureImage:
+"https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=1000&q=85",
+
+about1:
+"Fahren, Helfen und der direkte Kontakt mit Menschen sind meine Leidenschaft. Nach vielen Stationen in meinem Leben war klar: Ich möchte etwas Eigenes aufbauen – gemeinsam mit meinem Bruder.",
+
+about2:
+"Mit meiner Ausbildung im Gesundheitswesen und der Erfahrung im Fahrdienst kenne ich sowohl die Praxis als auch die Abläufe mit den Kassen. Mein Ziel ist, dass jede Fahrt angenehm, sicher und menschlich abläuft. Gesundheit ist unsere Mission.",
+
+about3:
+"Wir behandeln jede Kundin und jeden Kunden mit echter Wertschätzung. Sicherheit hat dabei immer Priorität, ob beim Fahren oder beim Tragen. Sie können sich auf uns verlassen: Wir kommen pünktlich und halten, was wir zusagen.",
+
+founder:"Semih Yilmaz",
+
+phone:"06131-4634120",
+
+email:"kontakt@krankenheld-fahrdienst.de",
+
+address:
+"Yilmaz Krankenfahrdienst GbR\nSemih Yilmaz und Furkan Yilmaz\nLaubenheimer Straße 63\n55130 Mainz",
+
+hours:
+"Mo – So, 7:00 bis 19:00 Uhr",
+
+region:
+"Mainz, Rheinhessen inkl. Wiesbaden, Nieder-Olm, Ingelheim, Bingen, Alzey, Worms, Bad Kreuznach und Frankfurt."
+
+};
+
+
+/* ============================================================
+   LOAD DATA
+============================================================ */
+
+let data = JSON.parse(
+localStorage.getItem("krankenheldData")
+) || defaultData;
+
+
+/* ============================================================
+   APPLY DATA
+============================================================ */
+
+function applyData(){
+
+document.getElementById("navName").textContent =
+data.company;
+
+document.getElementById("navSubtitle").textContent =
+data.subtitle;
+
+document.getElementById("heroEyebrow").textContent =
+data.eyebrow;
+
+document.getElementById("heroTitleGreen").textContent =
+data.heroTitleGreen;
+
+document.getElementById("heroTitleDark").textContent =
+data.heroTitleDark;
+
+document.getElementById("heroDescription").textContent =
+data.heroDescription;
+
+document.getElementById("heroFloatingTitle").textContent =
+data.floatingTitle;
+
+document.getElementById("heroFloatingText").textContent =
+data.floatingText;
+
+document.getElementById("heroImage").src =
+data.heroImage;
+
+document.getElementById("storyImage").src =
+data.storyImage;
+
+document.getElementById("featureImage").src =
+data.featureImage;
+
+document.getElementById("aboutText1").textContent =
+data.about1;
+
+document.getElementById("aboutText2").textContent =
+data.about2;
+
+document.getElementById("aboutText3").textContent =
+data.about3;
+
+document.getElementById("founderName").textContent =
+data.founder;
+
+document.getElementById("contactPhone").textContent =
+data.phone;
+
+document.getElementById("contactEmail").textContent =
+data.email;
+
+document.getElementById("contactAddress").innerHTML =
+data.address.replace(/\n/g,"<br>");
+
+document.getElementById("businessHours").textContent =
+data.hours;
+
+document.getElementById("regionText").textContent =
+data.region;
+
+
+/* PHONE LINKS */
+
+const phoneClean =
+data.phone.replace(/[^0-9+]/g,"");
+
+document.getElementById("navPhone").href =
+"tel:"+phoneClean;
+
+document.getElementById("heroPhone").href =
+"tel:"+phoneClean;
+
+document.getElementById("ctaPhone").href =
+"tel:"+phoneClean;
+
+document.getElementById("footerPhone").href =
+"tel:"+phoneClean;
+
+
+/* EMAIL */
+
+document.getElementById("heroEmail").href =
+"mailto:"+data.email;
+
+document.getElementById("ctaEmail").href =
+"mailto:"+data.email;
+
+document.getElementById("footerEmail").href =
+"mailto:"+data.email;
+
+}
+
+
+/* ============================================================
+   ADMIN
+============================================================ */
+
+const adminOpen =
+document.getElementById("adminOpen");
+
+const adminOverlay =
+document.getElementById("adminOverlay");
+
+const adminClose =
+document.getElementById("adminClose");
+
+const loginButton =
+document.getElementById("loginButton");
+
+const loginBox =
+document.getElementById("loginBox");
+
+const adminContent =
+document.getElementById("adminContent");
+
+
+adminOpen.onclick = function(){
+
+adminOverlay.classList.add("active");
+
+};
+
+
+adminClose.onclick = function(){
+
+adminOverlay.classList.remove("active");
+
+};
+
+
+adminOverlay.addEventListener("click",function(e){
+
+if(e.target === adminOverlay){
+
+adminOverlay.classList.remove("active");
+
+}
+
+});
+
+
+/* LOGIN */
+
+loginButton.onclick = function(){
+
+const password =
+document.getElementById("adminPassword").value;
+
+if(password === "3636"){
+
+loginBox.style.display="none";
+
+adminContent.classList.add("active");
+
+loadAdminFields();
+
+}else{
+
+document.getElementById("loginError").style.display="block";
+
+}
+
+};
+
+
+document.getElementById("adminPassword")
+.addEventListener("keydown",function(e){
+
+if(e.key==="Enter"){
+
+loginButton.click();
+
+}
+
+});
+
+
+/* ============================================================
+   ADMIN FIELDS
+============================================================ */
+
+function loadAdminFields(){
+
+document.getElementById("editCompany").value =
+data.company;
+
+document.getElementById("editSubtitle").value =
+data.subtitle;
+
+document.getElementById("editEyebrow").value =
+data.eyebrow;
+
+document.getElementById("editHeroTitle").value =
+data.heroTitleGreen+" "+data.heroTitleDark;
+
+document.getElementById("editHeroDescription").value =
+data.heroDescription;
+
+document.getElementById("editFloatingTitle").value =
+data.floatingTitle;
+
+document.getElementById("editFloatingText").value =
+data.floatingText;
+
+document.getElementById("editHeroImage").value =
+data.heroImage;
+
+document.getElementById("editStoryImage").value =
+data.storyImage;
+
+document.getElementById("editFeatureImage").value =
+data.featureImage;
+
+document.getElementById("editAbout1").value =
+data.about1;
+
+document.getElementById("editAbout2").value =
+data.about2;
+
+document.getElementById("editAbout3").value =
+data.about3;
+
+document.getElementById("editFounder").value =
+data.founder;
+
+document.getElementById("editPhone").value =
+data.phone;
+
+document.getElementById("editEmail").value =
+data.email;
+
+document.getElementById("editAddress").value =
+data.address;
+
+document.getElementById("editHours").value =
+data.hours;
+
+document.getElementById("editRegion").value =
+data.region;
+
+updatePreviews();
+
+}
+
+
+/* ============================================================
+   SAVE
+============================================================ */
+
+document.getElementById("saveButton")
+.onclick=function(){
+
+const heroTitle =
+document.getElementById("editHeroTitle").value.trim();
+
+let parts =
+heroTitle.split(" in ");
+
+let green =
+parts[0] || heroTitle;
+
+let dark =
+parts.length > 1
+? "in "+parts.slice(1).join(" in ")
+: "";
+
+
+data = {
+
+...data,
+
+company:
+document.getElementById("editCompany").value,
+
+subtitle:
+document.getElementById("editSubtitle").value,
+
+eyebrow:
+document.getElementById("editEyebrow").value,
+
+heroTitleGreen:
+green,
+
+heroTitleDark:
+dark,
+
+heroDescription:
+document.getElementById("editHeroDescription").value,
+
+floatingTitle:
+document.getElementById("editFloatingTitle").value,
+
+floatingText:
+document.getElementById("editFloatingText").value,
+
+heroImage:
+document.getElementById("editHeroImage").value,
+
+storyImage:
+document.getElementById("editStoryImage").value,
+
+featureImage:
+document.getElementById("editFeatureImage").value,
+
+about1:
+document.getElementById("editAbout1").value,
+
+about2:
+document.getElementById("editAbout2").value,
+
+about3:
+document.getElementById("editAbout3").value,
+
+founder:
+document.getElementById("editFounder").value,
+
+phone:
+document.getElementById("editPhone").value,
+
+email:
+document.getElementById("editEmail").value,
+
+address:
+document.getElementById("editAddress").value,
+
+hours:
+document.getElementById("editHours").value,
+
+region:
+document.getElementById("editRegion").value
+
+};
+
+
+localStorage.setItem(
+"krankenheldData",
+JSON.stringify(data)
+);
+
+applyData();
+
+const message =
+document.getElementById("adminMessage");
+
+message.style.display="block";
+
+setTimeout(function(){
+
+message.style.display="none";
+
+},3000);
+
+updatePreviews();
+
+};
+
+
+/* ============================================================
+   RESET
+============================================================ */
+
+document.getElementById("resetButton")
+.onclick=function(){
+
+if(confirm("Alle Änderungen zurücksetzen?")){
+
+data = {...defaultData};
+
+localStorage.removeItem("krankenheldData");
+
+applyData();
+
+loadAdminFields();
+
+}
+
+};
+
+
+/* ============================================================
+   IMAGE PREVIEW
+============================================================ */
+
+function updatePreviews(){
+
+document.getElementById("previewHero").src =
+document.getElementById("editHeroImage").value;
+
+document.getElementById("previewStory").src =
+document.getElementById("editStoryImage").value;
+
+document.getElementById("previewFeature").src =
+document.getElementById("editFeatureImage").value;
+
+}
+
+
+[
+"editHeroImage",
+"editStoryImage",
+"editFeatureImage"
+].forEach(function(id){
+
+document.getElementById(id)
+.addEventListener("input",updatePreviews);
+
+});
+
+
+/* ============================================================
+   MOBILE MENU
+============================================================ */
+
+document.getElementById("menuBtn")
+.onclick=function(){
+
+document.getElementById("navLinks")
+.classList.toggle("open");
+
+};
+
+
+document.querySelectorAll(".nav-links a")
+.forEach(function(link){
+
+link.addEventListener("click",function(){
+
+document.getElementById("navLinks")
+.classList.remove("open");
+
+});
+
+});
+
+
+/* ============================================================
+   FAQ
+============================================================ */
+
+document.querySelectorAll(".faq-question")
+.forEach(function(button){
+
+button.addEventListener("click",function(){
+
+const item =
+button.parentElement;
+
+document.querySelectorAll(".faq-item")
+.forEach(function(other){
+
+if(other !== item){
+
+other.classList.remove("active");
+
+}
+
+});
+
+item.classList.toggle("active");
+
+});
+
+});
+
+
+/* ============================================================
+   SCROLL REVEAL
+============================================================ */
+
+const observer =
+new IntersectionObserver(
+
+function(entries){
+
+entries.forEach(function(entry){
+
+if(entry.isIntersecting){
+
+entry.target.classList.add("visible");
+
+}
+
+});
+
+},
+
+{
+threshold:.12
+}
+
+);
+
+
+document.querySelectorAll(".reveal,.reveal-left,.reveal-right")
+.forEach(function(element){
+
+observer.observe(element);
+
+});
+
+
+/* ============================================================
+   INITIALIZE
+============================================================ */
+
+applyData();
+
+</script>
+
+</body>
+</html>
